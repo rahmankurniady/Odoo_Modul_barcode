@@ -1,0 +1,33 @@
+<odoo>
+    <record id="view_picking_scan_wizard_form" model="ir.ui.view">
+        <field name="name">picking.scan.wizard.form</field>
+        <field name="model">picking.scan.wizard</field>
+        <field name="arch" type="xml">
+            <form string="Scan Barang">
+
+                <group>
+                    <field name="barcode" class="o_barcode_input" widget="barcode_enter" placeholder="Scan barcode di sini..."  autofocus="autofocus" />
+                    <field name="qty" widget="integer"/>
+                </group>
+
+                <group string="Hasil Scan">
+                    <field name="scan_line_ids">
+                        <list>
+                            <field name="product_id"/>
+                            <field name="demand_qty"/>
+                            <field name="scanned_qty"/>
+                        </list>
+                    </field>
+                </group>
+                
+                <footer>
+                    <button name="action_scan"
+                        string="Scan"
+                        type="object"
+                        class="btn-primary"
+                        default_focus = "1"/>
+                </footer>
+            </form>
+        </field>
+    </record>
+</odoo>
